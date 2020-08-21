@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
   only want to respond to body click if clicked outside dropdwon
 */
 
-const Dropdown = ({ options, selected, onSelectedChange }) => {
+const Dropdown = ({ options, selected, onSelectedChange, label }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
 
@@ -47,7 +47,7 @@ const Dropdown = ({ options, selected, onSelectedChange }) => {
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label">Select a Color</label>
+        <label className="label">{label}</label>
         <div
           onClick={() => {
             // console.log('dropdown clicked');
